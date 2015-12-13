@@ -22,6 +22,20 @@ $(function() {
 	
 	$( ".map" ).mapper();
 	
+	
+	$( ".map2" ).mapper({
+		zoom:12,
+		lat:55.9531,
+		lng: -3.1889,
+		complete:function(e) {			
+						
+			var marker = new google.maps.Marker({
+				position: {lat: 55.9531, lng: -3.1889},
+				map: e.map
+			});			
+		}	
+	}); 
+	
 });
 
 </script>
@@ -38,60 +52,70 @@ $(function() {
 
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6">
-				<p>Long Page.</p>
-				<p>Please scroll down to see the map.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<div class="map" style="height:400px; background:blue">
-				</div>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>				
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-				<p>Long Page.</p>
-			</div>
+       	  <div class="col-xs-12">
+   		    <h1>Jquery UX Map.</h1>
+			  <p>A jQuery plugin designed to fix usability issues with Google Maps embedded on to web pages </p>
+				<p><strong>Features:</strong></p>
+				<ul>
+				  <li>Desktop users can use the mouse wheel to scroll down the page. </li>
+				  <li>Mobile users can drag the map down without getting 'stuck' dragging the map.</li>
+				  <li>Clicking, or touching the map 'enables' the map, allowing scroll wheel zoom.</li>
+				  <li>Touching, dragging or scrolling away 'disables' the map.</li>
+				  <li>Map height it limited so that mobile users don't 'stuck' dragging the map.</li>
+				  <li>Map centers in the page so mobile users have an area above / below to drag away from the map.</li>
+				  <li>Full screen view is especially useful for mobile users.</li>
+            </ul>
+          </div>
+        </div>
+        
+        
+         <div class="row">   
+			
+            <div class="col-sm-12">
+            	<h3>Simple Map</h3>
+            </div>
+            <div class="col-sm-6">
+			  <div class="map" style="height:400px; background:blue"></div>
+            </div>
+            <div class="col-sm-6"> 
+              <pre>
+$( ".map" ).mapper();
+              </pre>
+            </div>
+           </div>
+           <div class="row">  
+           
+            <div class="col-sm-12">
+            	<h3>Map, using callback to then add marker</h3>
+            </div> 
+			
+            <div class="col-sm-6">     
+                
+				<div class="map2" style="height:400px; background:blue"></div>
+            </div>
+             <div class="col-sm-6">    
+            
+                <pre>
+$( ".map2" ).mapper({
+    zoom:12,
+    lat:55.9531,
+    lng: -3.1889,
+    complete:function(e) {			
+                    
+        var marker = new google.maps.Marker({
+            position: {lat: 55.9531, lng: -3.1889},
+            map: e.map
+        });			
+    }	
+}); 
+                </pre>
+				
+		  </div>
 		</div>
 
 
 
 	</div>	
-
 
 </body>
 </html>

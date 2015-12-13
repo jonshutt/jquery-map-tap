@@ -5,14 +5,22 @@
  	// plugin definition
 	$.fn.mapper = function(options) {
 		
+		
+		
+		
 		var defaults = {
 			lat: 57,
 			lng: -2,
 			zoom: 5,
-			type: 'ROADMAP'
+			type: 'ROADMAP',
+			complete: null
 		};
 		
 		var settings = $.extend( {}, defaults, options );		
+
+
+
+		this.each(function() {
 
 		var maparea = $(this);
 
@@ -93,7 +101,22 @@
 	};
 	
 	var map=new google.maps.Map(map[0],mapProp);
+	
+	
+	if ( $.isFunction( settings.complete ) ) {
+				
+		settings.complete( {
+			map: map
+		} );
+	}
+			
 
+	
+		});
+		
+		
+		return this;
+	
 		
 	};
 	

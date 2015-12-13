@@ -1,5 +1,6 @@
 .mapwrap {
 	position: relative;
+height:100%;
 }
 
 .mapwrap .overlay {
@@ -11,6 +12,46 @@
 	background: rgba(0,0,0,.4);
 }
 
+.mapwrap .map {
+	position: absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+}
+
 .mapwrap.active .overlay {
 	display: none;
+}
+
+.mapwrap.expanded  {
+	position: fixed;
+	top:0px;
+	right:0px;
+	left:0px;
+	bottom:0px;
+	z-index:1000
+}
+
+.mapwrap .btn-close {
+ display:none;
+}
+.mapwrap .btn-expand {
+ display:block;
+}
+.mapwrap .btn-close,
+.mapwrap .btn-expand {
+
+ position:absolute;
+top:10px;
+right:10px;
+}
+
+
+.mapwrap.expanded .btn-close {
+display:block;
+}
+
+.mapwrap.expanded .btn-expand {
+display:none;
 }
